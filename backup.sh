@@ -1,0 +1,1 @@
+tar -cf bak.tar converted images statistics *.sh
