@@ -8,10 +8,10 @@ fi
 chromaFmt="yuv420p"
 if [ "$chromaFmt" = "yuv420p" ]
 	then
-		FFpad="pad=if(mod(iw\,2)\,iw+1\,iw):if(mod(ih\,2)\,ih+1\,ih)"
+		FFpad="crop=trunc(iw/2)*2:trunc(ih/2)*2:0:0"
 		sampleSize="-sample 2x2"
 	else
-		FFpad="pad=iw:ih"
+		FFpad="crop=iw:ih:0:0"
 		sampleSize="-sample 1x1"
 fi
 
