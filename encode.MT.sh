@@ -19,7 +19,7 @@ if [ -z "$3" ]
 		lossy=$3
 fi
 
-find images/ -type f -print0 | xargs -0 -n1 -P6 -I{} sh encode.ST.$format.$lossy.sh "{}" $quality
+find images/ -type f -print0 | xargs -0 -n1 -P4 -I{} sh encode.ST.$format.$lossy.sh "{}" $quality
 
 mkdir -p "./statistics/$lossy/$format/"
 cat stats_* | sort -u > "./statistics/$lossy/$format/allstats.q$quality.txt"
